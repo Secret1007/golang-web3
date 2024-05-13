@@ -1,3 +1,15 @@
 package network
 
-type Server struct {}
+type ServerOpts struct {
+	Transports []Transport
+}
+
+type Server struct {
+	ServerOpts
+}
+
+func NewServer(opts ServerOpts) *Server {
+	return &Server{
+		ServerOpts: opts,
+	}
+}
